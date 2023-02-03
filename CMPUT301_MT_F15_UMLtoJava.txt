@@ -1,0 +1,43 @@
+public interface Command {
+	public void execute();
+}
+
+public class MultipleCommands implements Command {
+	private ArrayList<Command> commands = new ArrayList<>(); 
+	
+	public void execute() {
+		...
+	}
+}
+
+public class CutCommand implements Command {
+	private TextSelection selection;
+	public CutCommand(TextSelection selection) {
+		...
+	}
+
+	public void execute() {
+		...
+	}
+}
+
+public class PasteCommand implements Command {
+	private TextSelection selection;
+	public PasteCommand(TextSelection selection) {
+		...
+	}
+
+	public void execute() {
+		...
+	}
+}
+
+public class TextSelection {
+	private TextBuffer buffer;
+	public int start;
+	public int end;
+}
+
+public class TextBuffer {
+	...
+}
